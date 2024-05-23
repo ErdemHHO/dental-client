@@ -10,7 +10,8 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Homepage />} />
+				<Route path="/" element={<FormPage />} />
+				<Route path="/homepage" element={<Homepage />} />
 				<Route path="/point" element={<PointPage />} />
 				<Route path="/signin" element={<SigninPage />} />
 				<Route path="/signup" element={<SignupPage />} />

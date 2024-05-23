@@ -64,7 +64,7 @@ const PhotoForm = () => {
 			<Form>
 				<Container className="bg-light p-3 border border-1 rounded-3 border-dark">
 					<Row className="d-flex justify-content-center">
-						<h3 className="text-center">Puzzle Oluştur Oyuna Başla</h3>
+						<h3 className="text-center">Diş Sağlığını Test Et</h3>
 						<hr />
 						<Form.Group className="mb-3" controlId="textInput">
 							<div>
