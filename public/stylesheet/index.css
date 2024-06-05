@@ -374,6 +374,7 @@
 }
 
 .footer{
+	margin-top: 400px;
 	opacity: 0;
 	animation: slideInFromBottom 2s ease-in-out 0.5s forwards;
 }

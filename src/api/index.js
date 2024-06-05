@@ -3,6 +3,7 @@ import axios from "axios";
 const url1 = "/puzzle";
 const url2 = "/prediction";
 const url3 = "/point";
+const url4 = "/support-record";
 
 const API = axios.create({ baseURL: "http://localhost:4000" });
 
@@ -40,4 +41,8 @@ export const getLastPredictionByUserId = (userId) => {
 
 export const getAllPredictionsByUserId = (userId) => {
   return API.get(`/prediction/${userId}`);
+};
+
+export const createSupportRecord = (newSupportRecord) => {
+  return API.post(url4, newSupportRecord);
 };

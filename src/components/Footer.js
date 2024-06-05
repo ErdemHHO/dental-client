@@ -1,14 +1,34 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
+import * as api from "../api/index";
+import { toast } from "react-toastify";
 
 function Footer() {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
+
+  const [postData, setPostData] = useState({
+    message: "",
+    userId: user?.user?.id,
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await api.createSupportRecord(postData);
+      toast.success("Destek talebiniz başarıyla iletilmiştir.");
+      setPostData({
+        message: "",
+        userId: user?.user?.id,
+      });
+    } catch (error) {
+      toast.error("Talep sırasında bir hata oluştu");
+    }
+  };
+
   return (
     <div>
-      <Container
-        fluid
-        className="footer text-center bg-danger p-5 text-white mt-5"
-      >
+      <Container fluid className="footer text-center bg-danger p-5 text-white">
         <Row>
           <Col md={6}>
             <Row>
@@ -24,15 +44,19 @@ function Footer() {
           </Col>
           <Col className="text-center" md={6}>
             <div>
-              <Form>
+              <Form onSubmit={handleSubmit}>
                 <Container className="p-3">
                   <Row className="d-flex justify-content-center">
-                    <h3 className="text-center">Öneri , Istek ve Sikayet</h3>
+                    <h3 className="text-center">Öneri, Istek ve Şikayet</h3>
                     <Form.Control
                       className="footer-form"
                       type="text"
-                      id="inputPassword5"
-                      aria-describedby="passwordHelpBlock"
+                      id="inputMessage"
+                      aria-describedby="messageHelpBlock"
+                      value={postData.message}
+                      onChange={(e) =>
+                        setPostData({ ...postData, message: e.target.value })
+                      }
                     />
                     <Button
                       variant="info"
