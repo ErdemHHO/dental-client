@@ -1,32 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-import Navbar from '../components/Navbar';
+import Navbar from "../components/Navbar";
 
-import Social from '../components/Social';
-import Puzzle from '../components/Puzzle';
-import Footer from '../components/Footer';
+import Footer from "../components/Footer";
+import Teeth from "../components/Teeth";
 
 function Homepage() {
-	const [user] = useState(JSON.parse(localStorage.getItem('profile')).user);
+  const [user] = useState(JSON.parse(localStorage.getItem("profile")).user);
 
-	const navigate = useNavigate();
+  const navigate = useNavigate();
 
-	useEffect(() => {
-		if (!user) {
-			navigate('/signin');
-		}
-	}, []);
+  useEffect(() => {
+    if (!user) {
+      navigate("/signin");
+    }
+  }, []);
 
-	return (
-		<div>
-			<br />
-			<Navbar />
-			<Puzzle />
-			<Social />
-			<Footer />
-		</div>
-	);
+  return (
+    <div>
+      <br />
+      <Navbar />
+      <Teeth />
+      <Footer />
+    </div>
+  );
 }
 
 export default Homepage;
