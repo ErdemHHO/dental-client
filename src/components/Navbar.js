@@ -85,15 +85,9 @@ function Navbar() {
                   <div className="dropdown-menu onOff ">
                     <a
                       className="dropdown-item text-black dhove onOffr"
-                      href="/home"
+                      href="/homepage"
                     >
                       Profil Bilgilerim
-                    </a>
-                    <a
-                      className="dropdown-item text-black dhover onOff"
-                      href="/home"
-                    >
-                      Oynama Geçmişim
                     </a>
                     <div className="dropdown-divider text-black dhover onOff"></div>
                     <a
