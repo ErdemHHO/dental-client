@@ -4,7 +4,6 @@ import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
 import FormPage from "./pages/FormPage";
 import { ToastContainer } from "react-toastify";
-import PointPage from "./pages/PointPage";
 import AllQuery from "./pages/AllQuery";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<FormPage />} />
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/all-query" element={<AllQuery />} />
-        <Route path="/point" element={<PointPage />} />
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
