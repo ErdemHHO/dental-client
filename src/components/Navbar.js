@@ -32,7 +32,7 @@ function Navbar() {
       >
         <div className="container-fluid">
           <img className="Nteethgif" src="/img/teeth.gif" alt="gif"></img>
-          <a className="navbar-brand" href="/home">
+          <a className="navbar-brand" href="/homepage">
             <h3>DİŞ SAĞLIĞI</h3>
           </a>
           <button
